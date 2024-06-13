@@ -12,3 +12,7 @@ sudo apt install tmux && tmux
 ```
 python3 -m main.py
 ```
+
+ثم عشن تعمل جلسه يفضل شغال تكتب
+ctrl+b
+d
