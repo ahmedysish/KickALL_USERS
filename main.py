@@ -33,7 +33,7 @@ async def start_bot(cl: Client, m: Message):
         [InlineKeyboardButton(text="📦 Public Repository", url="https://github.com/DevKEROcc/KickALL_USERS")]
     ])
     await m.reply(
-        f"Hello {m.from_user.mention} انا البوت التفليش بطير كل الاعضاء في الجروبات او القنوات  من تطوير < @KERO_7X \ @Ahmed_5x >.",
+        f"Hello {m.from_user.mention}  انا البوت التفليش بطير كل الاعضاء في الجروبات او القنوات  من تطوير < @KERO_7X \ @Ahmed_5x >. للمساعده اكتب /help",
         reply_markup=keyboard)
 
 
