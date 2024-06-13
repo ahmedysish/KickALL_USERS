@@ -20,27 +20,27 @@ uvloop.install()
 
 bot = Client(name="kickmemberbot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
-logging.warning("⚡️ Bot Started!")
+logging.warning("⚡️ البوت اشتغل!")
 
 
 @bot.on_message(filters.command("start") & filters.private)
 async def start_bot(cl: Client, m: Message):
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton(text="➕ Add me to a group",
+        [InlineKeyboardButton(text="➕ اضفني الي جروب ",
                               url=f"tg://resolve?domain={cl.me.username}&startgroup=&admin=manage_chat+restrict_members")],
-        [InlineKeyboardButton(text="➕ Add me to a channel",
+        [InlineKeyboardButton(text="➕ اضافه الي قناه ",
                               url=f"tg://resolve?domain={cl.me.username}&startchannel&admin=change_info+restrict_members+post_messages")],
-        [InlineKeyboardButton(text="📦 Public Repository", url="https://github.com/samuelmarc/kickallmembersbot")]
+        [InlineKeyboardButton(text="📦 Public Repository", url="https://github.com/DevKEROcc/KickALL_USERS")]
     ])
     await m.reply(
-        f"Hello {m.from_user.mention} I am a bot to remove (not ban) all users from your group or channel created by @samuel_ks, below you can add the bot to your group or channel or access the bot's public repository .",
+        f"Hello {m.from_user.mention} انا البوت التفليش بطير كل الاعضاء في الجروبات او القنوات  من تطوير < @KERO_7X \ @Ahmed_5x >.",
         reply_markup=keyboard)
 
 
 @bot.on_message(filters.command("help"))
 async def help_bot(_, m: Message):
     await m.reply(
-        "Need help? To use the bot it's very simple, just add me to your group or channel as an admin and use the /kick_all command and all users will be removed (not banned).")
+        "للتفليش قم بكتابه /kick_all")
 
 
 @bot.on_message(filters.command("kick_all") & (filters.channel | filters.group))
@@ -68,7 +68,7 @@ async def kick_all_members(cl: Client, m: Message):
                         kick_count += 1
                     except FloodWait as e:
                         await asyncio.sleep(e.value)
-                await m.reply(f"✅ Total Users Removed: {kick_count}")
+                await m.reply(f"✅ عدد الاعضاء: {kick_count}")
             else:
                 loops_count = members_count / 200
                 loops_count = round(loops_count)
@@ -84,11 +84,11 @@ async def kick_all_members(cl: Client, m: Message):
                         except FloodWait as e:
                             await asyncio.sleep(e.value)
                     await asyncio.sleep(15)
-                await m.reply(f"✅ Total Users Removed: {kick_count}")
+                await m.reply(f"✅ عدد الاعضاء: {kick_count}")
         else:
-            await m.reply("❌ The bot is admin but does not have the necessary permissions!")
+            await m.reply("❌ البوت مش معاه خاصيه الطرد")
     else:
-        await m.reply("❌ The bot must have admin!")
+        await m.reply("❌ البوت مش ادمن")
 
 
 bot.run()
