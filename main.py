@@ -12,9 +12,9 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 logging.basicConfig(level=logging.WARNING, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-API_ID = int(os.getenv("API_ID","29879953"))
-API_HASH = os.getenv("API_HASH","e099c70412e3263deb55cbd586e22a88")
-BOT_TOKEN = os.getenv("BOT_TOKEN","")
+API_ID = int(os.getenv("API_ID","20290507"))
+API_HASH = os.getenv("API_HASH","918e2476480fda28d5aac433100417ab")
+BOT_TOKEN = os.getenv("BOT_TOKEN","7245592871:AAExcV8ho6hz0DFpmbJgejTVlKY2MIsHGbI")
 
 uvloop.install()
 
